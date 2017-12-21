@@ -49,10 +49,7 @@ environment:
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 install:
-- ps: install-packageprovider nuget -force
-- ps: import-packageprovider nuget -force
-- ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-- ps: install-module pscx
+- ps: install-module pscx -scope CurrentUser
 - ps: cinst -y wget
 - ps: refreshenv
 - ps: . .\.ci\env.ps1
