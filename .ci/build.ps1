@@ -1,3 +1,4 @@
+Set-PSDebug -Trace 1
 . "${env:APPVEYOR_BUILD_FOLDER}\.ci\env.ps1"
 
 Invoke-BatchFile "C:\projects\php-sdk\bin\phpsdk_setvars.bat"

@@ -1,3 +1,4 @@
+Set-PSDebug -Trace 1
 . "${env:APPVEYOR_BUILD_FOLDER}\.ci\env.ps1"
 
 Write-Output Collect artifacts and zip

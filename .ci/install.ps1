@@ -1,6 +1,7 @@
-cinst wget pscx
-
+Set-PSDebug -Trace 1
 . "${env:APPVEYOR_BUILD_FOLDER}\.ci\env.ps1"
+
+cinst wget pscx
 
 (new-object net.webclient).DownloadFile("https://github.com/OSTC/php-sdk-binary-tools/archive/${env:PHP_SDK_BINARY_TOOLS_VER}.zip", "C:\projects\${env:PHP_SDK_BINARY_TOOLS_VER}.zip")
 7z x -y "C:\projects\${env:PHP_SDK_BINARY_TOOLS_VER}.zip" -oC:\projects
