@@ -51,6 +51,7 @@ environment:
 install:
 - ps: cinst -y wget pscx
 - ps: refreshenv
+- ps: Import-Module Pscx
 #- ps: install-packageprovider nuget -force
 #- ps: import-packageprovider nuget -force
 #- ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
