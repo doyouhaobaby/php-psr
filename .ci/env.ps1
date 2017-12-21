@@ -11,7 +11,7 @@ if (-not (Test-Path $pscxPath)) {
 
 $env:PSModulePath = $env:PSModulePath + ";" + $pscxPath;
 
-Import-Module Pscx
+Import-Module Pscx -DisableNameChecking
 
 $env:Path += ";C:\projects\php-sdk\bin;C:\projects\php\bin;C:\projects\php"
 $env:TEST_PHP_EXECUTABLE = "C:\projects\php\bin\php.exe"
