@@ -1,4 +1,4 @@
-Import-Module Pscx
+Import-Module "C:\Program Files (x86)\PowerShell Community Extensions\Pscx3\Pscx\Pscx.psm1"
 
 $env:Path += ";C:\projects\php-sdk\bin;C:\projects\php\bin;C:\projects\php"
 $env:TEST_PHP_EXECUTABLE = "C:\projects\php\bin\php.exe"
