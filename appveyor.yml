@@ -51,7 +51,10 @@ environment:
 install:
 #- ps: install-module pscx -scope CurrentUser
 - ps: cinst wget pscx
-- ps: refreshenv
+# - ps: refreshenv
+- ps: echo $env:PSModulePath
+- ps: ls C:\Program Files (x86)\PowerShell Community Extensions\Pscx3\Pscx
+- ps: ls C:\Program Files\PowerShell Community Extensions\Pscx3\Pscx
 - ps: $env:PSModulePath = $env:PSModulePath + ";" + "C:\Program Files (x86)\PowerShell Community Extensions\Pscx3\Pscx";
 - ps: . .\.ci\env.ps1
 - ps: . .\.ci\download.ps1
