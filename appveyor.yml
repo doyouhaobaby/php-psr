@@ -49,9 +49,7 @@ environment:
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 install:
-- ps: cinst wget pscx
-# - ps: refreshenv
-- ps: .\.ci\download.ps1
+- ps: .\.ci\install.ps1
 
 build_script:
 - ps: .\.ci\build.ps1
