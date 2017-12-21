@@ -49,24 +49,23 @@ environment:
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 install:
-- ps: cinst -y wget pscx
+- ps: install-packageprovider nuget -force
+- ps: import-packageprovider nuget -force
+- ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+- ps: install-module pscx
+- ps: cinst -y wget
 - ps: refreshenv
-- ps: Import-Module Pscx
-#- ps: install-packageprovider nuget -force
-#- ps: import-packageprovider nuget -force
-#- ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-#- ps: install-module pscx
 - ps: . .\.ci\env.ps1
 - ps: . .\.ci\download.ps1
 
 build_script:
-- ps: .\.ci\build.ps1
+- ps: . .\.ci\build.ps1
 
 test_script:
 - cmd: nmake test
 
 after_build:
-- ps: .\.ci\after_build.ps1
+- ps: . .\.ci\after_build.ps1
 
 artifacts:
   - path: '.\*.zip'

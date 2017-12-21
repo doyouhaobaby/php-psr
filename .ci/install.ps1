@@ -1,1 +1,1 @@
-cinst wget
+cinst wget pscx
