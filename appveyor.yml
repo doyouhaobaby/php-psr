@@ -49,11 +49,8 @@ environment:
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 install:
-#- ps: install-module pscx -scope CurrentUser
 - ps: cinst wget pscx
 # - ps: refreshenv
-- ps: echo $env:PSModulePath
-- ps: $env:PSModulePath = $env:PSModulePath + ";" + "C:\Program Files (x86)\PowerShell Community Extensions\Pscx3\Pscx";
 - ps: . .\.ci\env.ps1
 - ps: . .\.ci\download.ps1
 
