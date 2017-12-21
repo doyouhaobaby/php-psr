@@ -1,3 +1,5 @@
+. "${env:APPVEYOR_BUILD_FOLDER}\.ci\env.ps1"
+
 Write-Output Collect artifacts and zip
 mkdir -Force .\package
 Copy-Item -Force *.md package

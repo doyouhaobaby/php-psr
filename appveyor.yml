@@ -58,7 +58,7 @@ test_script:
 - cmd: nmake test
 
 after_build:
-- ps: . .\.ci\after_build.ps1
+- ps: .\.ci\after_build.ps1
 
 artifacts:
   - path: '.\*.zip'
