@@ -1,3 +1,5 @@
+Import-Module Pscx
+
 $env:Path += ";C:\projects\php-sdk\bin;C:\projects\php\bin;C:\projects\php"
 $env:TEST_PHP_EXECUTABLE = "C:\projects\php\bin\php.exe"
 
