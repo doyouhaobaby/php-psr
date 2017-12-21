@@ -51,11 +51,10 @@ environment:
 install:
 - ps: cinst wget pscx
 # - ps: refreshenv
-- ps: . .\.ci\env.ps1
-- ps: . .\.ci\download.ps1
+- ps: .\.ci\download.ps1
 
 build_script:
-- ps: . .\.ci\build.ps1
+- ps: .\.ci\build.ps1
 
 test_script:
 - cmd: nmake test
