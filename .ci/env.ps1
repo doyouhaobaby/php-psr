@@ -1,4 +1,17 @@
-Import-Module "C:\Program Files (x86)\PowerShell Community Extensions\Pscx3\Pscx\Pscx.psm1"
+$pscxPath = "C:\Program Files (x86)\PowerShell Community Extensions\Pscx3\Pscx";
+
+if (-not (Test-Path $pscxPath)) {
+    $pscxPath = $null;
+    Write-Host "Searching for the pscx powershell module.";
+    $pscxPath = (Get-ChildItem -Path "C:\Program Files\" -Filter "pscx.dll" -Recurse).FullName;
+    if (!$pscxPath) { $pscxPath = (Get-ChildItem -Path "C:\Program Files (x86)\" -Filter "pscx.dll" -Recurse).FullName; }
+    $pscxPath = Split-Path $pscxPath;
+    Write-Host "Found it at " + $pscxPath;
+}
+
+$env:PSModulePath = $env:PSModulePath + ";" + $pscxPath;
+
+Import-Module Pscx
 
 $env:Path += ";C:\projects\php-sdk\bin;C:\projects\php\bin;C:\projects\php"
 $env:TEST_PHP_EXECUTABLE = "C:\projects\php\bin\php.exe"
