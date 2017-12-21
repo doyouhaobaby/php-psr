@@ -50,11 +50,11 @@ environment:
 
 install:
 - ps: cinst -y wget pscx
-- ps: install-packageprovider nuget -force
-- ps: import-packageprovider nuget -force
-- ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-- ps: install-module pscx
 - ps: refreshenv
+#- ps: install-packageprovider nuget -force
+#- ps: import-packageprovider nuget -force
+#- ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+#- ps: install-module pscx
 - ps: . .\.ci\env.ps1
 - ps: . .\.ci\download.ps1
 
